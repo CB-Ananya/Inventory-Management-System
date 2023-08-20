@@ -6,6 +6,7 @@ Stock details, Supplier details, Employee details are kept track of in the datab
 Admin and Staff personnel have varied privileges.  
 Billing function updates the stock and invoice is generated as a pdf.
 
+This project was developed by C B Ananya, Ayshwarya B and Harini Mohan
 ## Setting up the environment and adding libraries
 Download Netbeans IDE (We have used Netbeans IDE 8.2)
 Download Oracle 11g and setup sqlplus. Set userid and password.
