@@ -13,6 +13,8 @@ Download Oracle 11g and setup sqlplus. Set userid and password.
 
 Execute the commands in the "CreateTables.txt" file in sqlplus Command Line Client one-by-one for creating the necessary tables for the application.
 
+Extract the Project Folder from the zip file in this repository.
+
 Open the project folder using the IDE.
 On the left, below a line of icons, you will see- Projects, Services, Files.
 Click on Services.
