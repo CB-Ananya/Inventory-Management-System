@@ -1,0 +1,85 @@
+drop table ORDERS;
+drop table EMPLOYEES;
+drop table SUPPLY;
+drop table SUPPLIERS;
+drop table STORES;
+drop table CUSTOMERS;
+drop table PRODUCTS;
+
+create table PRODUCTS(PID varchar2(5) primary key,
+brand char(20) not null,
+pname char(20) not null,
+mfg_date DATE not null,
+exp_date DATE not null,
+category char(10) not null,
+Quantity int not null,
+unit_price int not null);
+
+
+create table CUSTOMERS(CID varchar2(5) PRIMARY KEY,
+fname char(10) not null,
+lname char(10) not null,
+phno varchar2(10) not null,
+doorno varchar(10) not null,
+street varchar2(10) not null,
+area varchar2(10) not null,
+city varchar2(10) not null,
+state varchar2(10) not null);
+
+create table STORES(STID varchar2(5) primary key,
+sname char(10) not null,
+phno varchar2(10) not null,
+doorno varchar(10) not null,
+street varchar2(10) not null,
+area varchar2(10) not null,
+city varchar2(10) not null,
+state varchar2(10) not null
+);
+
+create table SUPPLIERS(
+SID VARCHAR2(5) primary key,
+sname char(10) not null,
+phno varchar2(10) not null,
+doorno varchar(10) not null,
+street varchar2(10) not null,
+area varchar2(10) not null,
+city varchar2(10) not null,
+state varchar2(10) not null
+);
+
+create table SUPPLY(SUPID varchar2(5) primary key,
+PID varchar2(5),
+SID varchar2(5),
+STID varchar2(5),
+Sup_Date DATE not null,
+CONSTRAINT chck_fk_pid FOREIGN KEY(pid) REFERENCES PRODUCTS(pid),
+CONSTRAINT chck_fk_sid FOREIGN KEY(sid) REFERENCES SUPPLIERS(sid),
+CONSTRAINT chck_fk_sttid FOREIGN KEY(stid) REFERENCES STORES(stid));
+
+
+create table EMPLOYEES(EID  varchar2(5) PRIMARY KEY,
+STID varchar2(5),
+fname char(10) not null,
+lname char(10) not null,
+phno varchar2(10) not null,
+doorno varchar(10) not null,
+street varchar2(10) not null,
+area varchar2(10) not null,
+city varchar2(10) not null,
+state varchar2(10) not null,
+CONSTRAINT chck_fk_stid FOREIGN KEY(STID) REFERENCES STORES(STID));
+
+create table ORDERS(OID varchar2(5),
+PID varchar2(5),
+CID varchar2(5),
+EID varchar2(5),
+Price int NOT NULL,
+Quantity int NOT NULL,
+Bill_Date DATE NOT NULL,
+PRIMARY KEY(OID,PID),
+CONSTRAINT chck_fk_PPID FOREIGN KEY(PID) REFERENCES PRODUCTS(PID),
+CONSTRAINT chck_fk_CCID FOREIGN KEY(CID) REFERENCES CUSTOMERS(CID),
+CONSTRAINT chck_fk_EEID FOREIGN KEY(EID) REFERENCES EMPLOYEES(EID));
+
+
+
