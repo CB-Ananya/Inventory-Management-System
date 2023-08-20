@@ -8,10 +8,12 @@ Billing function updates the stock and invoice is generated as a pdf.
 
 ## Setting up the environment and adding libraries
 Download Netbeans IDE (We have used Netbeans IDE 8.2)
-Download Oracle 11g. Set userid and password.
+Download Oracle 11g and setup sqlplus. Set userid and password.
+
+Execute the commands in the "CreateTables.txt" file in sqlplus Command Line Client one-by-one for creating the necessary tables for the application.
 
 Open the project folder using the IDE.
-On the left, below a line of icons, you will see- Projects, Services, Files
+On the left, below a line of icons, you will see- Projects, Services, Files.
 Click on Services.
 Under Services, right-click on Drivers and add the "ojdbc8.jar" file which you can find in the "JAR FILES" folder of this repository.
 Now, under "Drivers" you will see "Oracle Thin". Select "Oracle Thin". In the window that opens, replace the userid and password with your localhosts's userid and password and click on "Finish"
@@ -28,4 +30,4 @@ Run the file named "Homes.java"
 
 You are now good to go!
 
-For a complete application walkthrough and other implementation details, please check out the project report!
+For a complete application walkthrough and other implementation details, please check out the Project Report and the Program Walkthrough documents!
